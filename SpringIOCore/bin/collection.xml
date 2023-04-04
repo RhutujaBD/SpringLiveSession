@@ -1,0 +1,54 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <!-- Definition for javaCollection -->
+  
+   <bean id = "javaCollection" class = "com.example.spring.ioc.collection.CollectionIOCInjecction">
+      	
+      <!-- results in a setAddressList(java.util.List) call -->
+      <property name = "phoneNo">
+         <list>
+            <value>9021212624</value>
+            <value>8459604895</value>
+            <value>9021212624</value>
+            <value>9922454512</value>
+         </list>
+      </property>
+
+      <!-- results in a setAddressSet(java.util.Set) call -->
+      <property name = "country">
+         <set>
+            <value>INDIA</value>
+            <value>CHINA</value>
+            <value>PAKISTAN</value>
+            <value>CHINA</value>
+         </set>
+      </property>
+
+      <!-- results in a setAddressMap(java.util.Map) call -->
+      <property name = "recordMap">
+         <map>
+            <entry key = "91" value = "INDIA"/>
+            <entry key = "92" value = "Pakistan"/>
+            <entry key = "1" value = "USA"/>
+            <entry key = "1" value = "USA"/>
+         </map>
+      </property>
+      
+      <!-- results in a setAddressProp(java.util.Properties) call -->
+      <property name = "bankAccount">
+         <props>
+            <prop key = "HDFC">HDFC BANK</prop>
+            <prop key = "ICICI">ICICI BANK</prop>
+            <prop key = "SBI">STATE BANK OF INDIA</prop>
+            <prop key = "PNB">PUNJAB NATIONAL BANK</prop>
+            <prop key = "SBH">STATE BANK OF HYDERABAD</prop>
+         </props>
+      </property>
+   </bean>
+
+</beans>

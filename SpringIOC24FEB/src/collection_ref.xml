@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Bean Definition to handle references and values -->
+	<bean id="mobileNo" class="com.example.spring.ioc.collection.CollectionIOCInjecction">
+		<property name="phoneNo">
+			<list>
+				<value>9021212625</value>
+			</list>
+		</property>	
+	</bean>
+
+
+	<bean id="javaCollection" class="com.example.spring.ioc.collection.CollectionIOCInjecction">
+
+		<property name="phoneNo">
+			<list value-type="java.util.ArrayList">
+				<ref bean="mobileNo" />
+			</list>
+		</property>
+
+		<!-- Passing bean reference for java.util.Set -->
+		<property name="country">
+			<set>
+				<value>Pakistan</value>
+			</set>
+		</property>
+
+		<!-- Passing bean reference for java.util.Map -->
+		<property name="recordMap">
+			<map>
+				<entry key="1" value="INDIA" />
+				<entry key="2" value="address1" />
+				<entry key="3" value="address2" />
+			</map>
+		</property>
+	</bean>
+
+</beans>
